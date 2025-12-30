@@ -13,11 +13,12 @@ publishing {
             }
 
             pom {
-                name.set("Pixabay Content License")
+                name.set("來電鈴聲使用")
                 description.set("Pixabay Content License")
 
                 licenses {
                     license {
+                        comments.set("https://pixabay.com/sound-effects/ringtone-023-376906/")
                         name.set("Pixabay Content License")
                         url.set("https://pixabay.com/service/license-summary/")
                         distribution.set("repo")
