@@ -1,6 +1,31 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    `maven-publish`
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            // This maps the library's output to the publication
+            afterEvaluate {
+                from(components["release"])
+            }
+
+            pom {
+                name.set("Pixabay Content License")
+                description.set("Pixabay Content License")
+
+                licenses {
+                    license {
+                        name.set("Pixabay Content License")
+                        url.set("https://pixabay.com/service/license-summary/")
+                        distribution.set("repo")
+                    }
+                }
+            }
+        }
+    }
 }
 
 android {
